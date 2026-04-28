@@ -1,0 +1,6 @@
+operating: 1
+systems: 1
+are: 1 2
+cool: 1
+threads: 2
+fast: 2
