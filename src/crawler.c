@@ -172,9 +172,9 @@ int main(int argc, char *argv[])
         else if (strcmp(argv[i], "--output") == 0 && i + 1 < argc)
             output_dir = argv[++i];
         else if (strcmp(argv[i], "--ipc") == 0 && i + 1 < argc)
-            i++;  // <-- FIX: Skip --ipc and its value
-        else
-            seed_url = argv[i];
+            i++;  // skip --ipc and its value
+        else if (strncmp(argv[i], "--", 2) != 0 && !seed_url)
+            seed_url = argv[i];  // Only set seed from first non-flag argument
     }
 
     if (!seed_url) {
